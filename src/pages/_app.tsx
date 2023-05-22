@@ -1,24 +1,16 @@
 import { AppProps } from 'next/app'
-import Image from 'next/image'
-import Link from 'next/link'
+
+import Container from './_container'
+import { CartProvider } from '../contexts/CartContext'
 
 import { globalStyles } from '../styles/global'
 
-import logoImg from '../assets/logo.svg'
-import { Container, Header } from '../styles/pages/app'
-
 globalStyles()
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App(appProps: AppProps) {
   return (
-    <Container>
-      <Header>
-        <Link href="/">
-          <Image src={logoImg} alt="Ignite Shop logo" />
-        </Link>
-      </Header>
-
-      <Component {...pageProps} />
-    </Container>
+    <CartProvider>
+      <Container {...appProps} />
+    </CartProvider>
   )
 }

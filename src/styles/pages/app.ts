@@ -1,6 +1,6 @@
 import { styled } from '..'
 
-export const Container = styled('div', {
+export const ContentContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'flex-start',
@@ -13,4 +13,7 @@ export const Header = styled('header', {
   width: '100%',
   maxWidth: 1180,
   margin: '0 auto',
+
+  display: 'flex',
+  justifyContent: 'space-between',
 })
