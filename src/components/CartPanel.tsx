@@ -54,7 +54,7 @@ export function CartPanel() {
 
       <ItemsContainer>
         {cartItems.map((product) => (
-          <ProductItem>
+          <ProductItem key={product.id}>
             <ImageContainer>
               <Image src={product.imageUrl} width={104} height={96} alt="" />
             </ImageContainer>

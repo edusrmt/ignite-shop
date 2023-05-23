@@ -31,8 +31,8 @@ export default function Success({
 
       <SuccessContainer>
         <ProductsContainer>
-          {productsImages.map((productImg) => (
-            <ImageContainer>
+          {productsImages.map((productImg, index) => (
+            <ImageContainer key={index}>
               <Image src={productImg} width={120} height={110} alt="" />
             </ImageContainer>
           ))}

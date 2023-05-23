@@ -9,11 +9,10 @@ export const CartPanelContainer = styled('aside', {
   padding: '3rem',
   zIndex: 1,
   background: '$gray800',
+  boxShadow: '-4px 0px 30px 0px #000000CC',
 
   display: 'flex',
   flexDirection: 'column',
-
-  svg: {},
 
   h3: {
     fontSize: '$lg',
@@ -33,7 +32,7 @@ export const CloseButton = styled('button', {
 
 export const ItemsContainer = styled('div', {
   flex: 1,
-  overflowY: 'scroll',
+  overflowY: 'auto',
 })
 
 export const ProductItem = styled('div', {

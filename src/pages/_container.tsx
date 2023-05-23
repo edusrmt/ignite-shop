@@ -25,7 +25,7 @@ export default function Container({ Component, pageProps }: AppProps) {
           <Link href="/">
             <Image src={logoImg} alt="Ignite Shop logo" />
           </Link>
-          <CartButton handleClick={toggleIsCartOpen} />
+          <CartButton handleClick={toggleIsCartOpen} badge />
         </Header>
 
         <Component {...pageProps} />

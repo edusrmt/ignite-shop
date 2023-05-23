@@ -14,3 +14,18 @@ export const CartButtonContainer = styled('button', {
     transition: 'background-color 200ms',
   },
 })
+
+export const Badge = styled('span', {
+  display: 'inline-flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  position: 'absolute',
+  top: '1.5rem',
+  width: '1.5rem',
+  height: '1.5rem',
+  borderRadius: '50%',
+  fontSize: '$sm',
+  textAlign: 'center',
+  background: '$green500',
+  fontWeight: 'bold',
+})
