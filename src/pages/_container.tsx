@@ -11,7 +11,11 @@ import { CartPanel } from '../components/CartPanel'
 import { useContext } from 'react'
 
 export default function Container({ Component, pageProps }: AppProps) {
-  const { isCartOpen } = useContext(CartContext)
+  const { isCartOpen, setIsCartOpen } = useContext(CartContext)
+
+  const toggleIsCartOpen = () => {
+    setIsCartOpen(!isCartOpen)
+  }
 
   return (
     <>
@@ -21,7 +25,7 @@ export default function Container({ Component, pageProps }: AppProps) {
           <Link href="/">
             <Image src={logoImg} alt="Ignite Shop logo" />
           </Link>
-          <CartButton />
+          <CartButton handleClick={toggleIsCartOpen} />
         </Header>
 
         <Component {...pageProps} />

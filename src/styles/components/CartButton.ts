@@ -8,4 +8,9 @@ export const CartButtonContainer = styled('button', {
   cursor: 'pointer',
   width: '3rem',
   height: '3rem',
+
+  '&:hover': {
+    backgroundColor: '$gray600',
+    transition: 'background-color 200ms',
+  },
 })

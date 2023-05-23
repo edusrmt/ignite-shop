@@ -1,19 +1,14 @@
-import { useContext } from 'react'
-
 import { Handbag } from '@phosphor-icons/react'
 
 import { CartButtonContainer } from '@/src/styles/components/CartButton'
-import { CartContext } from '@/src/contexts/CartContext'
 
-export function CartButton() {
-  const { isCartOpen, setIsCartOpen } = useContext(CartContext)
+interface CartButtonProps {
+  handleClick: () => void
+}
 
-  const toggleIsCartOpen = () => {
-    setIsCartOpen(!isCartOpen)
-  }
-
+export function CartButton({ handleClick }: CartButtonProps) {
   return (
-    <CartButtonContainer onClick={toggleIsCartOpen}>
+    <CartButtonContainer onClick={handleClick}>
       <Handbag size={24} />
     </CartButtonContainer>
   )

@@ -13,9 +13,12 @@ import {
 
 import { X } from '@phosphor-icons/react'
 import { CartContext } from '../contexts/CartContext'
+import Image from 'next/image'
+import { formatPrice } from '../utils/formatter'
 
 export function CartPanel() {
-  const { setIsCartOpen } = useContext(CartContext)
+  const { cartItems, cartCount, cartTotal, setIsCartOpen, removeItemFromCart } =
+    useContext(CartContext)
 
   const handleClose = () => setIsCartOpen(false)
 
@@ -28,48 +31,30 @@ export function CartPanel() {
       <h3>Shopping Bag</h3>
 
       <ItemsContainer>
-        <ProductItem>
-          <ImageContainer></ImageContainer>
-          <InfoContainer>
-            <h4>Camiseta Beyond the Limits</h4>
-            <strong>R$ 79,90</strong>
-            <button>Remove</button>
-          </InfoContainer>
-        </ProductItem>
-        <ProductItem>
-          <ImageContainer></ImageContainer>
-          <InfoContainer>
-            <h4>Camiseta Beyond the Limits</h4>
-            <strong>R$ 79,90</strong>
-            <button>Remove</button>
-          </InfoContainer>
-        </ProductItem>
-        <ProductItem>
-          <ImageContainer></ImageContainer>
-          <InfoContainer>
-            <h4>Camiseta Beyond the Limits</h4>
-            <strong>R$ 79,90</strong>
-            <button>Remove</button>
-          </InfoContainer>
-        </ProductItem>
-        <ProductItem>
-          <ImageContainer></ImageContainer>
-          <InfoContainer>
-            <h4>Camiseta Beyond the Limits</h4>
-            <strong>R$ 79,90</strong>
-            <button>Remove</button>
-          </InfoContainer>
-        </ProductItem>
+        {cartItems.map((product) => (
+          <ProductItem>
+            <ImageContainer>
+              <Image src={product.imageUrl} width={104} height={96} alt="" />
+            </ImageContainer>
+            <InfoContainer>
+              <h4>{product.name}</h4>
+              <strong>{formatPrice(product.price)}</strong>
+              <button onClick={() => removeItemFromCart(product)}>
+                Remove
+              </button>
+            </InfoContainer>
+          </ProductItem>
+        ))}
       </ItemsContainer>
 
       <SummaryContainer>
         <SummaryRow>
           <span>Quantity</span>
-          <span>3 items</span>
+          <span>{cartCount} items</span>
         </SummaryRow>
         <SummaryRow>
           <span>Total value</span>
-          <span>R$ 270,00</span>
+          <span>{formatPrice(cartTotal)}</span>
         </SummaryRow>
       </SummaryContainer>
       <CheckoutButton>Checkout</CheckoutButton>

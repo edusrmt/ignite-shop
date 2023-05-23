@@ -8,7 +8,7 @@ export const HomeContainer = styled('main', {
   minHeight: 656,
 })
 
-export const Product = styled('div', {
+export const ProductContainer = styled('div', {
   background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
   borderRadius: 8,
   position: 'relative',
@@ -53,10 +53,24 @@ export const Product = styled('div', {
     },
   },
 
+  button: {
+    backgroundColor: '$green500',
+
+    '&:hover': {
+      backgroundColor: '$green300',
+      transition: 'background-color 200ms',
+    },
+  },
+
   '&:hover': {
     footer: {
       transform: 'translateY(0%)',
       opacity: 1,
     },
   },
+})
+
+export const ProductInfo = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
 })
