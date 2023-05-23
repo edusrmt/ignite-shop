@@ -6,6 +6,7 @@ export const ContentContainer = styled('div', {
   alignItems: 'flex-start',
   justifyContent: 'center',
   minHeight: '100vh',
+  marginBottom: '4rem',
 })
 
 export const Header = styled('header', {
