@@ -14,7 +14,6 @@ export function Header() {
   const { isCartOpen, setIsCartOpen } = useContext(CartContext)
 
   const toggleIsCartOpen = () => {
-    console.log(isCartOpen)
     setIsCartOpen(!isCartOpen)
   }
 
