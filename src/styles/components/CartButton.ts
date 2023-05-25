@@ -20,7 +20,7 @@ export const Badge = styled('span', {
   justifyContent: 'center',
   alignItems: 'center',
   position: 'absolute',
-  top: '1.5rem',
+  marginTop: '-1rem',
   width: '1.5rem',
   height: '1.5rem',
   borderRadius: '50%',

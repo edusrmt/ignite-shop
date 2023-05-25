@@ -1,16 +1,20 @@
 import { AppProps } from 'next/app'
 
-import Container from './_container'
+import { Header } from '../components/Header'
 import { CartProvider } from '../contexts/CartContext'
 
 import { globalStyles } from '../styles/global'
+import { ContentContainer } from '../styles/pages/app'
 
 globalStyles()
 
-export default function App(appProps: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <CartProvider>
-      <Container {...appProps} />
+      <ContentContainer>
+        <Header />
+        <Component {...pageProps} />
+      </ContentContainer>
     </CartProvider>
   )
 }
